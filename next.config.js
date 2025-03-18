@@ -6,10 +6,16 @@ import "./src/env.js";
 
 /** @type {import("next").NextConfig} */
 const config = {
-    typescript:{
+    images: {
+        remotePatterns: [
+            { hostname: "utfs.io" },
+            { hostname: "tk8zpspyil.ufs.sh" }, // ✅ Add this hostname
+        ],
+    },
+    typescript: {
         ignoreBuildErrors: true,
     },
-    eslint:{
+    eslint: {
         ignoreDuringBuilds: true,
     },
 };

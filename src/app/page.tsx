@@ -1,5 +1,6 @@
 import { SignedIn, SignedOut } from "@clerk/nextjs";
 import { getMyImages } from "~/server/queries";
+import Image from "next/image";
 
 // Enable dynamic rendering for the server component
 export const dynamic = "force-dynamic";
@@ -8,10 +9,10 @@ async function Images() {
     const userImages = await getMyImages(); // FIX: Correct variable name
 
     return (
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="mt-5 flex flex-wrap justify-center gap-4">
             {userImages.map((image) => (
                 <div key={image.id} className="w-48">
-                    <img src={image.url} alt={image.name} className="w-full h-auto" />
+                    <Image src={image.url} objectFit="contaion" width={200} height={20} alt="{image.name}" />
                     <div className="text-center">{image.name}</div>
                 </div>
             ))}
