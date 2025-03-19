@@ -25,12 +25,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+  modal,
+}: Readonly<{ children: React.ReactNode; modal: React.ReactNode }>) {
   return (
     <ClerkProvider>
     <html lang="en" className={`${GeistSans.variable}`}>
-      <body>
-      <NextSSRPlugin
+    <NextSSRPlugin
           /**
            * The `extractRouterConfig` will extract **only** the route configs
            * from the router to prevent additional information from being
@@ -39,8 +39,13 @@ export default function RootLayout({
            */
           routerConfig={extractRouterConfig(ourFileRouter)}
         />
+      <body>
+        <div className="grid h-screen grid-rows-[auto,1fr]">
         <TopNav />
-        {children}
+       <main className="overflow-y-scroll"> {children}</main>
+        </div>
+        {modal}
+        <div id="modal-root"></div>
       </body>
     </html>
     </ClerkProvider>
