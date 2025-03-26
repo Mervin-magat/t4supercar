@@ -86,3 +86,9 @@ dialog{
     @apply bg-background text-foreground;
     }
 }
+
+/* Prevent scrolling on all pages */
+html, body {
+  overflow: hidden;
+  height: 100%;
+}
