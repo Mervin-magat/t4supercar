@@ -2,7 +2,7 @@ import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 import { getMyImages } from "~/server/queries";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useRef } from "react";
+
 
 // Enable dynamic rendering for the server component
 export const dynamic = "force-dynamic";
@@ -40,7 +40,6 @@ async function Images() {
 function SignedOutPage() {
     return (
         <div className="fixed inset-0 flex items-center justify-center text-white overflow-hidden">
-            {/* Background Video */}
             <video 
                 autoPlay 
                 loop 
@@ -51,7 +50,7 @@ function SignedOutPage() {
             </video>
 
          
-            <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+            <div className="absolute inset-0 bg-black bg-opacity-30"></div>
 
           
             <div className="relative z-10 text-center px-6">
