@@ -1,9 +1,11 @@
 import { clerkClient } from "@clerk/clerk-sdk-node";
-import { getImage } from "~/server/queries";
+import { Button } from "~/components/ui/button";
+import { deleteImage, getImage } from "~/server/queries";
 
-export default async function FullPageImageView(props: { id: number }) {
-    const image = await getImage(props.id);
-    if (!image?.userId) return <div>Error: No uploader found.</div>;
+export default async function FullPageImageView(props: { photoId: string }) {
+    const idAsNumber = Number(props.photoId);
+    if (Number.isNaN(idAsNumber)) throw new Error("Invalid photoId");
+    const image = await getImage(idAsNumber);
 
     let uploaderInfo = null;
     try {
@@ -33,6 +35,17 @@ export default async function FullPageImageView(props: { id: number }) {
                     <div className="mt-3 text-gray-400 space-y-2">
                         <p>📤 Uploaded by: {fullName}</p>
                         <p>📅 Created At: {new Date(image.createdAt).toLocaleDateString()}</p>
+                    </div>
+                    <div  className="p-2">
+                        <form 
+                        action={async () => {
+                            "use server";
+                            await deleteImage(idAsNumber);
+                        }}>
+                            <Button type="submit" variant={"destructive"}>
+                                Delete
+                            </Button>
+                        </form>
                     </div>
                 </div>
             </div>

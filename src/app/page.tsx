@@ -16,7 +16,7 @@ async function Images() {
             {userImages.map((image) => (
                 <Link key={image.id} href={`/img/${image.id}`} passHref>
                     <div className="group relative overflow-hidden rounded-2xl shadow-xl transition transform hover:scale-105 hover:shadow-2xl cursor-pointer bg-gray-800">
-                        {/* FIXED: Correctly render images */}
+                      
                         <Image 
                             src={image.url} 
                             alt={image.name} 
@@ -36,7 +36,7 @@ async function Images() {
 }
 
 
-// Signed Out Page with Video Background
+
 function SignedOutPage() {
     return (
         <div className="fixed inset-0 flex items-center justify-center text-white overflow-hidden">
@@ -50,10 +50,10 @@ function SignedOutPage() {
                 <source src="https://tk8zpspyil.ufs.sh/f/jvybWn5giNAHv7hmwMdNt3F2n5qK1P7pLlGohcUwE869ZCHW" type="video/mp4" />
             </video>
 
-            {/* Dark Overlay for Better Contrast */}
+         
             <div className="absolute inset-0 bg-black bg-opacity-60"></div>
 
-            {/* Content */}
+          
             <div className="relative z-10 text-center px-6">
                 <h1 className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-yellow-400 drop-shadow-lg animate-fade-in">
                     Welcome to Cool Cars 🚗🔥
@@ -62,7 +62,7 @@ function SignedOutPage() {
                     Sign in to explore and showcase your stunning collection of cool car pictures.
                 </p>
 
-                {/* Sign In Button */}
+              
                 <div className="mt-6 animate-slide-up">
                     <SignInButton>
                         <button className="px-6 py-3 text-lg font-semibold bg-red-500 hover:bg-red-600 transition-all duration-300 rounded-xl shadow-lg transform hover:scale-105">
@@ -76,7 +76,7 @@ function SignedOutPage() {
 }
 
 
-// Main Page Component
+
 export default function HomePage() {
     return (
         <main className="min-h-screen bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white p-8">

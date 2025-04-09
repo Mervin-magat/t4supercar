@@ -1,6 +1,4 @@
-import { error } from "console";
-import { ne } from "drizzle-orm";
-import { number } from "zod";
+
 import FullPageImageView from "~/app/components/full-image-page";
 import { getImage } from "~/server/queries";
 
@@ -19,6 +17,9 @@ export default async function PhotoModal({
 
     const image = await getImage(idAsNumber);
 
-    return(  <FullPageImageView id={idAsNumber}/>
+    return(  
+        <div className="flex h-full min-h-0 w-full  min-w-0  overflow-y-hidden">
+                <FullPageImageView photoId={photoId}/>
+        </div>
     );
 }
