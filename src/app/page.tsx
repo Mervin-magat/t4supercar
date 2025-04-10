@@ -2,6 +2,7 @@ import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 import { getMyImages } from "~/server/queries";
 import Image from "next/image";
 import Link from "next/link";
+import NotificationHandler from "./components/notification-handler";
 
 
 // Enable dynamic rendering for the server component
@@ -83,6 +84,7 @@ export default function HomePage() {
                 <SignedOutPage />
             </SignedOut>
             <SignedIn>
+                <NotificationHandler/>
                 <h1 className="text-5xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-yellow-400 drop-shadow-lg mb-10 animate-fade-in">
                     Cool Cars Gallery 🚗🔥
                 </h1>

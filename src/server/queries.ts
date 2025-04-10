@@ -65,6 +65,6 @@ const image = await db.query.images.findFirst({
   },
  });
 
-redirect("/");
+redirect("/?deleted=true");
 }
 
