@@ -3,7 +3,6 @@ import { auth } from "@clerk/nextjs/server";
 import { db } from "./db";
 import { and, eq } from "drizzle-orm";
 import { images } from "./db/schema";
-import { error } from "console";
 import { utapi } from "./uploadthing";
 import analyticsServerClient from "./analytics";
 import { redirect } from "next/navigation";

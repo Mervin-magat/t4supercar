@@ -1,4 +1,4 @@
-import { clerkClient } from "@clerk/nextjs/server";
+import { clerkClient } from '@clerk/nextjs/server';
 import { auth } from "@clerk/nextjs/server";
 import { createUploadthing, type FileRouter } from "uploadthing/next";
 import { UploadThingError } from "uploadthing/server";
