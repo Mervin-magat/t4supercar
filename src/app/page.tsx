@@ -47,7 +47,7 @@ function SignedOutPage() {
                 muted 
                 className="absolute inset-0 w-full h-full object-cover"
             >
-                <source src="https://tk8zpspyil.ufs.sh/f/jvybWn5giNAHv7hmwMdNt3F2n5qK1P7pLlGohcUwE869ZCHW" type="video/mp4" />
+                <source src="https://tk8zpspyil.ufs.sh/f/jvybWn5giNAHuz4nCcbOC0oQ7YwcsaVjZbP16dAWpurBTGkR" type="video/mp4" />
             </video>
 
          
@@ -55,17 +55,17 @@ function SignedOutPage() {
 
           
             <div className="relative z-10 text-center px-6">
-                <h1 className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-yellow-400 drop-shadow-lg animate-fade-in">
-                    Welcome to Cool Cars 🚗🔥
+                <h1 className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-400 drop-shadow-lg animate-fade-in">
+                    Request Hcc Documents
                 </h1>
-                <p className="mt-4 text-xl text-gray-300 max-w-lg mx-auto animate-fade-in delay-100">
-                    Sign in to explore and showcase your stunning collection of cool car pictures.
+                <p className="mt-4 text-xl text-white-300 max-w-lg mx-auto animate-fade-in delay-100">
+                    Sign in to request COR, COE, COG, and Good Moral
                 </p>
 
               
                 <div className="mt-6 animate-slide-up">
                     <SignInButton>
-                        <button className="px-6 py-3 text-lg font-semibold bg-red-500 hover:bg-red-600 transition-all duration-300 rounded-xl shadow-lg transform hover:scale-105">
+                        <button className="px-6 py-3 text-lg font-semibold bg-yellow-500 hover:bg-blue-600 transition-all duration-300 rounded-xl shadow-lg transform hover:scale-105">
                             Sign In
                         </button>
                     </SignInButton>
@@ -79,17 +79,36 @@ function SignedOutPage() {
 
 export default function HomePage() {
     return (
-        <main className="min-h-screen bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white p-8">
+        <main className="min-h-screen text-white p-0 flex flex-col">
             <SignedOut>
-                <SignedOutPage />
+                <div className="min-h-screen bg-gradient-to-r from-black via-gray-900 to-black">
+                    <SignedOutPage />
+                </div>
             </SignedOut>
             <SignedIn>
-                <NotificationHandler/>
-                <h1 className="text-5xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-yellow-400 drop-shadow-lg mb-10 animate-fade-in">
-                    Cool Cars Gallery 🚗🔥
-                </h1>
-                <Images />
+                <div className="flex-grow bg-white text-black p-8">
+                    <NotificationHandler />
+                    <h1 className="text-5xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-400 drop-shadow-lg mb-10 animate-fade-in">
+                    Request Documents
+                    </h1>
+                    <Images />
+                </div>
             </SignedIn>
+
+            {/* Footer */}
+            <footer className="bg-yellow-400 text-black text-center py-4">
+                <p className="font-semibold">Developed by:</p>
+                <ul className="mt-2 space-y-1">
+                    <li>Bernard Mangulabnan</li>
+                    <li>Mervin Magat</li>
+                    <li>Andrei Sampang</li>
+                    <li>Renz Samson</li>
+                    <li>Paul Vismonte</li>
+                    <li>Steven Lising</li>
+                </ul>
+            </footer>
         </main>
     );
 }
+
+
